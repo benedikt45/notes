@@ -64,7 +64,7 @@ function css(cb) {
 }
 
 function js() {
-  return src(conf.src + '/js/main.js')
+  return src(conf.src + '/js/*.js')
     .pipe(webpack(webConfig))
     .pipe(dest(conf.dest + '/js'))
     .pipe(browserSync.stream());
