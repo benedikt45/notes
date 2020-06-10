@@ -1,0 +1,124 @@
+@import "./node_modules/reset-css/sass/reset";
+$color_main: #5275B0;
+$color_white: #FFFFFF;
+$color_active: #1C3B72;
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+.header {
+  display: flex;
+  background-color: $color_main;
+  color: $color_white;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 0 20px;
+  margin-bottom: 50px;
+
+  &__logo {
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    align-self: center;
+    padding: 10px 0;
+    font-size: 1.2rem;
+  }
+
+  &__button {
+    color: inherit;
+    padding: 15px 10px;
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: $color_active;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $color_main;
+  border-radius: 4px;
+
+  &__header {
+    display: flex;
+    padding: 10px 15px;
+    border-bottom: 1px solid $color_main;
+  }
+
+  &__title {
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: $color_main;
+    align-self: center;
+  }
+
+  &__button {
+    color: $color_white;
+    padding: 5px 10px;
+    background-color: $color_main;
+    border-radius: 4px;
+    box-shadow: 1px -1px rgba(0, 0, 0, 0.5);
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(-1px) translateX(1px);
+    }
+
+    &_red {
+      background-color: #F04F1D;
+    }
+  }
+
+  &__body {
+    padding: 0 20px;
+    font-size: 0.9rem;
+  }
+}
+
+.todo-list {
+  &__item {
+    padding: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: inherit;
+
+    &:not(:last-child)::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #330066;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    &_etc {
+      text-align: center;
+      font-size: 1.3em;
+    }
+  }
+}
+
+.cards {
+  &__item {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
